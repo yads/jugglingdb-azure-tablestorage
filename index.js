@@ -1,3 +1,1 @@
-exports = exports.module = AzureTablestore;
-
-AzureTablestore = require('./lib/azure-tablestore');
+exports = exports.module = require('./lib/azure-tablestore');
