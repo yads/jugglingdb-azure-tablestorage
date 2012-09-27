@@ -1,6 +1,8 @@
 var helper = require('./test_helper');
 
-var person;
+var person,
+    error,
+    id;
 
 module.exports = {
     setUp: helper.globalSetUp,
@@ -10,7 +12,22 @@ module.exports = {
         setUp: function(callback) {
             helper.getAdapter().define({model: {modelName: 'Person'}, settings: {}});
             person = {'firstName': 'John', 'lastName': 'Doe'};
-            helper.getAdapter().create('Person', person, callback);
+            helper.getAdapter().create('Person', person, function(err, data) {
+                error = err;
+                id = data;
+                callback();
+            });
+        },
+        errorShouldBeNull: function(test) {
+            test.expect(1);
+            test.ifError(error);
+            test.done();
+        },
+        idShouldBeRowKey: function(test) {
+            test.expect(2);
+            test.ok(id);
+            test.equal(id, person.RowKey);
+            test.done();
         },
         tableShouldExist: function(test) {
             test.expect(1);
