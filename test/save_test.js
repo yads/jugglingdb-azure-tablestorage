@@ -1,6 +1,7 @@
 var helper = require('./test_helper');
 
-var person;
+var person,
+    error;
 
 module.exports = {
     setUp: helper.globalSetUp,
@@ -10,10 +11,16 @@ module.exports = {
             person = {'firstName': 'John', 'lastName': 'Doe'};
             helper.getAdapter().create('Person', person, function() {
                 person.firstName = 'James';
-                helper.getAdapter().save('Person', person, function() {
+                helper.getAdapter().save('Person', person, function(err) {
+                    error = err;
                     callback();
                 })
             });
+        },
+        errorShouldBeNull: function(test) {
+            test.expect(1);
+            test.ifError(error);
+            test.done();
         },
         shouldHaveChangedValue: function(test) {
             test.expect(1);
