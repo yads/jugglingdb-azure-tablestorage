@@ -1,1 +1,1 @@
-exports = exports.module = require('./lib/azure-tablestore');
+module.exports = require('./lib/azure-tablestore');
