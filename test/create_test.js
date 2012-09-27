@@ -17,7 +17,7 @@ module.exports = {
             helper.getAdapter().client.getTable(helper.getAdapter().tableName('Person'), function(error){
                 test.ifError(error);
                 test.done();
-            })
+            });
         },
         entityShouldExist: function(test) {
             test.expect(4);
@@ -27,7 +27,7 @@ module.exports = {
                 test.equal(entity.firstName, person.firstName);
                 test.equal(entity.lastName, person.lastName);
                 test.done();
-            })
+            });
         }
     }
 };
