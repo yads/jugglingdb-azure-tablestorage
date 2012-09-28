@@ -6,8 +6,7 @@ var person,
 
 module.exports = {
     setUp: helper.globalSetUp,
-    /*tearDown: helper.gloablTearDown
-    },*/
+    tearDown: helper.globalTearDown,
     whenCreatingModel: {
         setUp: function(callback) {
             helper.getAdapter().define({model: {modelName: 'Person'}, settings: {}});

@@ -10,6 +10,7 @@ var person,
 
 module.exports = {
     setUp: helper.globalSetUp,
+    tearDown: helper.globalTearDown,
     whenModelDoesNotExist: {
         setUp: function(callback) {
             helper.getAdapter().define({model: {modelName: 'Person'}, settings: {}});

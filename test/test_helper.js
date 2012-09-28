@@ -17,12 +17,16 @@ module.exports = {
     },
     globalTearDown: function(callback) {
         if (!adapter) callback();
-        for (var model in adapter._models) {
-            adapter.client.deleteTable(adapter._models[model].settings.table, function (error){
+        var keys = Object.keys(adapter._models);
+        for (var i = 0; i < keys.length; i++) {
+            adapter.client.deleteTable(adapter._models[keys[i]].settings.table, function (error){
+                if (error) throw error;
+                if (i == keys.length) {
+                    adapter = null;
+                    callback();
+                }
             });
         }
-        adapter = null;
-        callback();
     },
     getAdapter: function(){
         return adapter;
