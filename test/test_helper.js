@@ -19,8 +19,7 @@ module.exports = {
         if (!adapter) callback();
         var keys = Object.keys(adapter._models);
         for (var i = 0; i < keys.length; i++) {
-            adapter.client.deleteTable(adapter._models[keys[i]].settings.table, function (error){
-                if (error) throw error;
+            adapter.client.deleteTable(adapter._models[keys[i]].settings.table, function (){
                 if (i == keys.length) {
                     adapter = null;
                     callback();
