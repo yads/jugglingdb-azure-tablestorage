@@ -130,5 +130,43 @@ module.exports = {
             test.equal(entities[0].firstName, 'John');
             test.done();
         }
+    },
+    whenSpecifyingOrder: {
+        shouldThrowException: function(test) {
+            test.expect(1);
+            test.throws(function(){
+                helper.getAdapter().all('Person', {order: "dateCreated"}, function() {});
+            });
+            test.done();
+        }
+    },
+    whenSpecifyingSkip: {
+        shouldThrowException: function(test) {
+            test.expect(1);
+            test.throws(function(){
+                helper.getAdapter().all('Person', {skip: 1}, function() {});
+            });
+            test.done();
+        }
+    },
+    whenSpecifyingLimit: {
+        setUp: function(callback) {
+            helper.getAdapter().all('Person', {limit: 1}, function(err, data) {
+                error = err;
+                entities = data;
+                callback();
+            });
+        },
+        shouldNotHaveError: function(test) {
+            test.expect(1);
+            test.ifError(error);
+            test.done();
+        },
+        shouldSendEntitiesToCallback: function(test) {
+            test.expect(2);
+            test.ok(entities);
+            test.equal(entities.length, 1);
+            test.done();
+        }
     }
 }
