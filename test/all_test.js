@@ -48,20 +48,44 @@ module.exports = {
         }
     },
     whenSpecifyingInOperator: {
-        shouldThrowException: function(test) {
-            test.expect(1);
-            test.throws(function(){
-                helper.getAdapter().all('Person', {where: {firstName: {inq: ['John']}}}, function() {});
+        setUp: function(callback) {
+            helper.getAdapter().all('Person', {where: {firstName: {inq: ['John', 'Robert']}}}, function(err, data) {
+                error = err;
+                entities = data;
+                callback();
             });
+        },
+        shouldNotHaveError: function(test) {
+            test.expect(1);
+            test.ifError(error);
+            test.done();
+        },
+        shouldSendEntitiesToCallback: function(test) {
+            test.expect(3);
+            test.ok(entities);
+            test.equal(entities.length, 1);
+            test.equal(entities[0].firstName, 'John');
             test.done();
         }
     },
     whenSpecifyingNotInOperator: {
-        shouldThrowException: function(test) {
-            test.expect(1);
-            test.throws(function(){
-                helper.getAdapter().all('Person', {where: {firstName: {nin: ['John']}}}, function() {});
+        setUp: function(callback) {
+            helper.getAdapter().all('Person', {where: {firstName: {nin: ['John', 'Robert']}}}, function(err, data) {
+                error = err;
+                entities = data;
+                callback();
             });
+        },
+        shouldNotHaveError: function(test) {
+            test.expect(1);
+            test.ifError(error);
+            test.done();
+        },
+        shouldSendEntitiesToCallback: function(test) {
+            test.expect(3);
+            test.ok(entities);
+            test.equal(entities.length, 1);
+            test.equal(entities[0].firstName, 'James');
             test.done();
         }
     },
