@@ -12,7 +12,7 @@ To use this custom adapter, use the adapter name in the `Schema` constructor cal
 
     mySchema = new Schema('azure-tablestorage-jugglingdb', {accountName:.., accountKey:...});
 
-The adapter will automatically set the Azure host to be <accountName>.table.core.windows.net
+The adapter will automatically set the Azure host to be *accountName*.table.core.windows.net
 To specify your own host, pass in the `host` parameter in the settings
 
     mySchema = new Schema('azure-tablestorage-jugglingdb', {accountName:.., accountKey:..., host:...});
