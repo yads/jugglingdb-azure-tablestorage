@@ -1,7 +1,7 @@
 {
-  "name": "azure-tablestore-jugglingdb",
+  "name": "azure-tablestorage-jugglingdb",
   "version": "0.1.0",
-  "description": "azure tablestore adapter for jugglingdb ORM",
+  "description": "azure table storage adapter for jugglingdb ORM",
   "main": "index.js",
   "scripts": {
     "test": "nodeunit test/*_test*"
@@ -19,7 +19,7 @@
     "azure",
     "jugglingdb",
     "orm",
-    "tablestore"
+    "table storage"
   ],
   "author": "Vadim Kazakov"
 }
