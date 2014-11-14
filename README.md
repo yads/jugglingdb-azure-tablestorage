@@ -1,6 +1,6 @@
 ## About
 
-This is a Windows Azure Table Storage adapter for the juggling db ORM http://github.com/1602/jugglingdb
+This is a Windows Azure Table Storage adapter for the [juggling db](http://github.com/1602/jugglingdb) v0.3.x ORM
 
 ## Installation
 
@@ -16,6 +16,10 @@ The adapter will automatically set the Azure host to be *accountName*.table.core
 To specify your own host, pass in the `host` parameter in the settings
 
     mySchema = new Schema('azure-tablestorage-jugglingdb', {accountName:.., accountKey:..., host:...});
+
+## Limitations
+* Azure Table Storage only supports String id properties
+* Some querying features are not supported, notably skip and order by
 
 ## License
 

@@ -1,6 +1,6 @@
 {
   "name": "azure-tablestorage-jugglingdb",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "azure table storage adapter for jugglingdb ORM",
   "main": "index.js",
   "scripts": {
@@ -17,12 +17,16 @@
     "semicov": "^0.1.1-2",
     "should": "~3.0.1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yads/jugglingdb-azure-tablestorage"
+  },
+  "homepage": "https://github.com/yads/jugglingdb-azure-tablestorage",
   "keywords": [
     "azure",
     "jugglingdb",
     "orm",
     "table storage"
   ],
-  "author": "Vadim Kazakov"
+  "author": "Vadim Kazakov <yads12@gmail.com>"
 }
