@@ -4,16 +4,18 @@
   "description": "azure table storage adapter for jugglingdb ORM",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*_test*"
+    "test": "mocha test/*.test*"
   },
   "dependencies": {
-    "azure": "^0.10.1",
+    "azure-storage": "^0.4.0",
     "jugglingdb": "^0.3.0",
     "natural": "^0.1.28",
     "node-uuid": "^1.4.1"
   },
   "devDependencies": {
-    "nodeunit": "^0.9.0"
+    "nodeunit": "^0.9.0",
+    "semicov": "^0.1.1-2",
+    "should": "^4.3.0"
   },
   "repository": "",
   "keywords": [
