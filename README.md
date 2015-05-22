@@ -4,7 +4,7 @@ This is a Windows Azure Table Storage adapter for the [juggling db](http://githu
 
 ## Installation
 
-    npm install azure-tablestorage-jugglingdb
+    npm install jugglingdb-azure-tablestorage
 
 ## Usage
 
