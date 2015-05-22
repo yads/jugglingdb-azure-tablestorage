@@ -1,6 +1,6 @@
 {
   "name": "jugglingdb-azure-tablestorage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "azure table storage adapter for jugglingdb ORM",
   "main": "index.js",
   "scripts": {
