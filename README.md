@@ -1,5 +1,7 @@
 ## About
 
+__This package is deprecated. Please use [jugglingdb-azure-tablestorage](https://www.npmjs.com/package/jugglingdb-azure-tablestorage)__
+
 This is a Windows Azure Table Storage adapter for the [juggling db](http://github.com/1602/jugglingdb) v0.3.x ORM
 
 ## Installation
